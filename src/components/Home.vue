@@ -15,13 +15,13 @@
 				<v-flex xs12>
 					<v-carousel :interval=8000 style="cursor: pointer;">
 						<v-carousel-item
-							v-for="item in meetups"
-							:src="item.imageUrl"
-							:key="item.id"
-							@click="onLoadMeetup(item.id)"
+							v-for="meetup in meetups"
+							:src="meetup.imageUrl"
+							:key="meetup.id"
+							@click="onLoadMeetup(meetup.id)"
 						>
 							<div class="title">
-								{{ item.title }}
+								{{ meetup.title }}
 							</div>
 						</v-carousel-item>
 					</v-carousel>
@@ -43,17 +43,10 @@
 
 <script>
   export default {
-    data () {
-      return {
-        meetups: [
-          {
-            imageUrl: 'https://cdn.pixabay.com/photo/2015/03/26/10/04/new-york-690868_960_720.jpg',
-            id: 'adfargfqfmqarvqaer123',
-            title: 'Meetup in New York'
-          },
-          { imageUrl: 'https://c1.staticflickr.com/3/2463/3598596311_84211f2566_b.jpg', id: 'adfargfqfmqarvqfgzjhsr123', title: 'Meetup in Paris' }
-        ]
-      }
+    computed: {
+			meetups () {
+				return this.$store.getters.featuredMeetups
+			}
 		},
 		methods: {
 			onLoadMeetup (id) {
