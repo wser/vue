@@ -2,7 +2,7 @@
   "name": "yt-devmeetup-vue",
   "version": "1.0.0",
   "description": "YT MAX's app for devmeetup built with vue",
-  "author": "Maximilian Scwartzmüller",
+  "author": "Maximilian Schwarzmüller",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
