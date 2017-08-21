@@ -28,7 +28,7 @@ export const store = new Vuex.Store({
 		loading: false,
 		error: null
 	},
-	mutations: {
+	mutations: { // commit
 		setLoadedMeetups (state, payload) {
 			state.loadedMeetups = payload
 		},
@@ -48,7 +48,7 @@ export const store = new Vuex.Store({
 			state.error = null
 		}
 	},
-	actions: {
+	actions: { // dispatch
 		loadMeetups ({commit}) {
 			commit('setLoading', true)
 			firebase.database().ref('meetups').once('value')
