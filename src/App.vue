@@ -15,7 +15,8 @@
         </v-list-tile>
         <v-list-tile 
           v-if="userIsAuthenticated"
-          @click="onLogout">
+          @click="onLogout"
+        >
           <v-list-tile-action>
             <v-icon>exit_to_app</v-icon>
           </v-list-tile-action>
@@ -47,7 +48,8 @@
         <v-btn 
           v-if="userIsAuthenticated"
           flat
-          @click="onLogout">
+          @click="onLogout"
+        >
           <v-icon left dark>exit_to_app</v-icon>
           Logout
         </v-btn>
@@ -91,6 +93,7 @@
     methods: {
       onLogout () {
         this.$store.dispatch('logout')
+        this.$router.push('/')
       }
     }
   }
