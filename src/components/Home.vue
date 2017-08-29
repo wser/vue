@@ -11,7 +11,7 @@
 				</v-flex>
 			</v-layout>
 
-			<v-layout>
+			<v-layout>  <!-- Loader -->
 				<v-flex xs12 class="text-xs-center">
 					<v-progress-circular 
 						indeterminate 
